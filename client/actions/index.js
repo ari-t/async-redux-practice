@@ -29,7 +29,7 @@ export function fetchPosts (subreddit) {
     dispatch(requestPosts())
     return request
       .get(`/api/v1/reddit/subreddit/${subreddit}`)
-      .then(res => {
+      .then( res => {
         dispatch(receivePosts(res.body))
       })
       .catch(err => {
